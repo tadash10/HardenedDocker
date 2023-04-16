@@ -1,0 +1,25 @@
+    Create a new file called cli.sh with the following contents:
+
+
+
+#!/bin/bash
+
+# Build the Docker image
+docker build -t docker-harden .
+
+# Run the Docker container
+docker run -p 80:80 docker-harden
+
+    Make cli.sh executable:
+
+
+
+chmod +x cli.sh
+
+    Run the script:
+
+
+
+./cli.sh
+
+#This will build the Docker image using the Dockerfile and run the resulting container, which will start the harden_docker.py script and expose port 80. You can then access the script from your browser by going to http://localhost:80.

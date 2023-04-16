@@ -1,0 +1,21 @@
+# Use a Python 3 base image
+FROM python:3
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the script and requirements file to the container
+COPY harden_docker.py requirements.txt ./
+
+# Install the required Python packages
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose the default port used by the script
+EXPOSE 8080
+
+# Start the script
+CMD [ "python", "./harden_docker.py" ]
+
+#This Dockerfile starts with a Python 3 base image, sets the working directory to /app, and copies the harden_docker.py script and requirements.txt file to the container. It then installs the required Python packages using pip, exposes the default port used by the script (in this case, port 8080), and starts the script using the CMD directive.
+
+
